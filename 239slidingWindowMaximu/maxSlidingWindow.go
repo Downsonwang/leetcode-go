@@ -1,6 +1,5 @@
 package _39slidingWindowMaximu
 
-
 // 用双Queue实现,保持下标右移,window存下标,每增加一个下标,值比前面的值大就将前面的下标删除,确保最左值最大.
 // 下标实现
 func MaxSlidingWindow(nums []int,k int) []int{
@@ -14,6 +13,7 @@ func MaxSlidingWindow(nums []int,k int) []int{
 			window = window[1:]
 		}
 		// 循坏 对比window里的最后一次元素, 比x小的都移除,永远确保最左的是最大值的下标
+
 		for len(window) > 0 && nums[window[len(window)-1]] <= value {
 			window = window[:len(window)-1]
 		}
